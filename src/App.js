@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  NativeModules
 } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -10,6 +11,10 @@ import { bindActionCreators } from 'redux';
 import getChatLog from './service'
 
 class App extends Component {
+  componentDidMount(){
+    console.log("NativeModules", NativeModules)
+  }
+
   render() {
     return (
       <View style={styles.container}>
