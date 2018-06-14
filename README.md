@@ -4,7 +4,7 @@
 
 A simple React + Redux project to retrieve, render and manipulate data returned from an API.
 
-This coding test is tested on with Xcode version 9.2
+This coding is tested on Xcode version 9.2
 
 ## Commands
 
