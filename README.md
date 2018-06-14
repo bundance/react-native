@@ -25,7 +25,7 @@ It has two publically exposed functions `getMessages` and `getMembers`. Your tas
 
 `service.js` currently consumes `data.js` to retrieve a list of messages, and put them into the redux store. 
 
-Do not modify `data.js` to achieve these tasks, and do not worry about the styling. Code addition should be unit tested. Any changes in tvOS code don't have to be unit tested.
+Do not modify `data.js` to achieve these tasks, and do not worry about the styling. Code addition should be unit tested. Any changes in iOS code don't have to be unit tested.
 
 1. Render the list of messages from the redux store
 
@@ -33,7 +33,7 @@ Do not modify `data.js` to achieve these tasks, and do not worry about the styli
 
 3. Display the avatar of the user next to the message
 
-5. Create a native tvOS module that provides you with a timestamp and send this value to React Native
+5. Create a native iOS module that provides you with a timestamp and send this value to React Native
 
 4. Display and format the timestamp of the message to be human readable
 
