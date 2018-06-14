@@ -25,7 +25,7 @@ It has two publically exposed functions `getMessages` and `getMembers`. Your tas
 
 `service.js` currently consumes `data.js` to retrieve a list of messages, and put them into the redux store. 
 
-Do not modify `data.js` to achieve these tasks, and do not worry about the styling. Code addition should be unit tested. Any changes in Swift don't have to be unit tested
+Do not modify `data.js` to achieve these tasks, and do not worry about the styling. Code addition should be unit tested. Any changes in tvOS code don't have to be unit tested.
 
 1. Render the list of messages from the redux store
 
