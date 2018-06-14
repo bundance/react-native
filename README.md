@@ -33,6 +33,8 @@ Do not modify `data.js` to achieve these tasks, and do not worry about the styli
 
 3. Display the avatar of the user next to the message
 
+5. Create a native tvOS module that provides you with a timestamp and send this value to React Native
+
 4. Display and format the timestamp of the message to be human readable
 
 5. Sort the messages by time
