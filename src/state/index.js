@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux';
 import messages from './messages/messages.reducers';
-// import users from './users/users.reducers';
-console.log({ messages });
+import members from './members/members.reducers';
 
 const reducer = combineReducers({
+    members,
     messages
-    // users
 });
 
 export default (state, action) => reducer(state, action);
