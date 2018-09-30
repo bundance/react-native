@@ -1,34 +1,41 @@
 import React, { Component } from 'react';
 import {
+  FlatList,
   StyleSheet,
   Text,
-  View,
-  NativeModules
+  View
 } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import getChatLog from './service'
+import { getChatLog } from './state/messages/messages.actions';
+import { selectMessages } from './state/messages/messages.selectors';
 
 class App extends Component {
   componentDidMount(){
-    console.log("NativeModules", NativeModules)
+    this.props.getChatLog();
   }
 
+  keyExtractor = item => (item && item.id)
+
   render() {
+    const { messages } = this.props;
+    
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Hello
-        </Text>
+        <FlatList
+          data={messages}
+          keyExtractor={this.keyExtractor}
+          renderItem={({ item }) => (<Text style={styles.welcome}>{item.message}</Text>) }
+        />
       </View>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {};
-};
+const mapStateToProps = state => ({
+  messages: selectMessages(state)
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({ getChatLog }, dispatch);
 
