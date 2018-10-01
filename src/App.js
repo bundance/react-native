@@ -73,6 +73,7 @@ class App extends Component {
     
     return (
       <View style={styles.container}>
+        <Text style={styles.header}>Note: Touch message or press down mouse on it to see email</Text>
         <FlatList
           data={messages}
           extraData={this.state}
@@ -113,6 +114,12 @@ const styles = StyleSheet.create({
   email: {
     fontSize: 8,
     marginLeft: 10
+  },
+  header: {
+    fontSize: 10,
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+    marginBottom: 10
   },
   listItem: {
     display: 'flex',
