@@ -36,7 +36,8 @@ class MyListItem extends React.PureComponent {
         <View style={styles.listItem}>
           <Image style={{width: 100, height: 100}} source={{ uri: avatar }}/>
           <View>
-            <Text style={styles.welcome}>
+            <Text style={styles.timestamp}>{ item.messageBody.timestamp }</Text>
+            <Text style={styles.message}>
               { item.messageBody.message }
             </Text>
             { showEmail && <Text style={styles.email}>{item && item.member && item.member.email}</Text> }
@@ -100,18 +101,24 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: '#F5FCFF',
   },
+  email: {
+    fontSize: 8,
+    marginLeft: 10
+  },
   listItem: {
     display: 'flex',
     flexDirection: 'row',
     marginBottom: 10
   },
-  welcome: {
+  message: {
     fontSize: 10,
     textAlign: 'left',
     margin: 10,
   },
-  email: {
-    fontSize: 8,
+  timestamp: {
+    fontSize: 6,
+    fontStyle: 'italic',
     marginLeft: 10
   }
+  
 });
