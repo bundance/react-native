@@ -1,3 +1,7 @@
+# IMPORTANT! PLEASE READ... 
+
+The second part of the test states that a message's author's email should be shown when the user hovers their mouse over a message. However, this code is for an iOS app, which has no concept of a mouse! So I've had to improvise, and I've used React Native's touch API instead. So instead of hovering over a message to see the email, simply touch on the message (either with a mouse click if it's on the simulator, or with a finger if it's on an iPhone) instead, and you'll see the email appear.
+
 # NowTV React Interview
 
 ![NowTV](./logo.png)
