@@ -5,6 +5,11 @@
 
 - The original `members.json` data uses avatar images from `http://dummyimage.com`, but `dummyimage.com` now redirects all requests made using `http://` to the `https://` protocol scheme. Not sure if it's part of the test to debug this, but the code I've written here replaces `http://dummyimage.com/...` with `https://dummyimage.com/...` to successfully render the avatar. It does this in a memoized selector, so it's only done once.
 
+## ToDo
+- More tests. I only added unit tests for some of the selectors and reducers. For production code, everything would be unit tested, including the components (using Enzyme). However, time constraints meant I had to limit the tests I wrote.
+- Create the native iOS module and link it to React Native. I've not written a native iOS module before, so  ¯\_(ツ)_/¯
+Happy to give this a go if needed, though
+- Sort the messages by time.
 
 # (ORIGINAL README:) NowTV React Interview
 
