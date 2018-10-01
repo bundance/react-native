@@ -28,6 +28,21 @@ describe('messages selectors', () => {
                     avatar: 'https://dummyimage.com/100x100.jpg/ffff'
                 } })
             ]);
-        })
-    })
+        });
+    });
+
+    describe('getFormattedMessages', () => {
+        it('should format the messages correctly', () => {
+            // Note: the formatted timestamp should actually be "Thursday, 2 September, 04:27:38", which is what's
+            // rendered in iOS and Chrome. However, in Jest, the result is "Thursday, February 9, 2017, 4:27:38 AM",
+            // which is presumably due to Node implementing date.toLocaleDateString() differently.
+            // No time to debug this, though, so I've left the test as it is, with node's timestamp
+            expect(selectors.getFormattedMessages(mockState)).toEqual([{
+                id: 'cd445e6d-e514-424f-ba8f-16ec842002c6',
+                userId: 'fe27b760-a915-475c-80bb-7cdf14cc6ef3',
+                message: 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.',
+                timestamp: 'Thursday, February 9, 2017, 4:27:38 AM'
+            }]);
+        });
+    });
 });
