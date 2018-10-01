@@ -7,7 +7,7 @@
 
 ## ToDo
 - More tests. I only added unit tests for some of the selectors and reducers. For production code, everything would be unit tested, including the components (using Enzyme). However, time constraints meant I had to limit the tests I wrote.
-- Create the native iOS module and link it to React Native. I've not written a native iOS module before, so  ¯\_(ツ)_/¯
+- Create the native iOS module and link it to React Native. I've not written a native iOS module before, so  ¯\\_(ツ)_/¯
 Happy to give this a go if needed, though.
 
 # (ORIGINAL README:) NowTV React Interview
