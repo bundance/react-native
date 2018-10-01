@@ -14,7 +14,10 @@ import { getRichMessages } from './state/messages/messages.selectors';
 import { selectMembers } from './state/members/members.selectors';
 
 
-class MyListItem extends React.PureComponent {
+/**
+ * ListItme - renders an individual List Item
+ */
+class ListItem extends React.PureComponent {
   
   state = {
     showEmail: false
@@ -49,6 +52,9 @@ class MyListItem extends React.PureComponent {
 }
 
 
+/**
+ * Main App component - renderes a List of messages
+ */
 class App extends Component {
   
   componentDidMount(){
@@ -59,7 +65,7 @@ class App extends Component {
   keyExtractor = item => (item && item.messageBody.id)
 
   renderItem = ({item}) => (
-    <MyListItem item={item}/>
+    <ListItem item={item}/>
   );
 
   render() {
@@ -78,6 +84,7 @@ class App extends Component {
   }
 }
 
+// Connect App to the Redux store
 const mapStateToProps = state => ({
   members: selectMembers(state),
   messages: getRichMessages(state)
@@ -94,12 +101,14 @@ export default connect(
 )(App);
 
 
+// Styles for the app
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: '#F5FCFF',
+    padding: 30
   },
   email: {
     fontSize: 8,
@@ -120,5 +129,4 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     marginLeft: 10
   }
-  
 });
