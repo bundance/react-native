@@ -15,7 +15,7 @@ import { selectMembers } from './state/members/members.selectors';
 
 
 /**
- * ListItme - renders an individual List Item
+ * ListItem - renders an individual List Item
  */
 class ListItem extends React.PureComponent {
   
