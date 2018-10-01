@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   FlatList,
+  Image,
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
@@ -25,16 +26,21 @@ class MyListItem extends React.PureComponent {
     const { item } = this.props;
     const { showEmail } = this.state;
     
+    const avatar = item && item.member && item.member.avatar;
+
     return (
       <TouchableWithoutFeedback 
         onPressIn={() => this.changeShowEmailState(true)}
         onPressOut={() => this.changeShowEmailState(false)}
       >
-        <View>
-          <Text style={styles.welcome}>
-            { item.messageBody.message }
-          </Text>
-          { showEmail && <Text style={styles.email}>{item && item.member && item.member.email}</Text> }
+        <View style={styles.listItem}>
+          <Image style={{width: 100, height: 100}} source={{ uri: avatar }}/>
+          <View>
+            <Text style={styles.welcome}>
+              { item.messageBody.message }
+            </Text>
+            { showEmail && <Text style={styles.email}>{item && item.member && item.member.email}</Text> }
+          </View>
         </View>
       </TouchableWithoutFeedback>
     );
@@ -56,7 +62,7 @@ class App extends Component {
   );
 
   render() {
-    const { members, messages } = this.props;
+    const { messages } = this.props;
     
     return (
       <View style={styles.container}>
@@ -94,12 +100,18 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: '#F5FCFF',
   },
+  listItem: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginBottom: 10
+  },
   welcome: {
-    fontSize: 20,
+    fontSize: 10,
     textAlign: 'left',
     margin: 10,
   },
   email: {
-    fontSize: 12
+    fontSize: 8,
+    marginLeft: 10
   }
 });
