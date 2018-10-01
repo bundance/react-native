@@ -3,8 +3,13 @@ import { getFormattedMembers } from '../members/members.selectors';
 
 export const selectMessages = state => state.messages;
 
-export const getFormattedMessages = createSelector(
+export const getSortedMessages = createSelector(
     [selectMessages],
+    sortMessages
+)
+
+export const getFormattedMessages = createSelector(
+    [getSortedMessages],
     formatMessages
 );
 
@@ -29,6 +34,10 @@ export const getRichMessages = createSelector([
 });
 
 ////// HELPERS ////// 
+function sortMessages(messages) {
+    return messages.sort((msgA, msgB) => (new Date(msgA.timestamp) - new Date(msgB.timestamp)))
+}
+
 
 function formatMessages(messages) {
     return messages.map(message => ({ 
